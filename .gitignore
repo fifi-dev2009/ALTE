@@ -1,0 +1,16 @@
+# Secrets and local configuration
+.env
+.env.*
+
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+
+# Local database
+*.db
+
+# Frontend dependencies and build output
+node_modules/
+dist/

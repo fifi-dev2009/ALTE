@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+
+@import "tailwindcss";
+
+
+@keyframes alte-food-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes alte-food-float-soft {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(3deg);
+  }
+}
+
+.food-float {
+  animation: alte-food-float 5s ease-in-out infinite;
+}
+
+.food-float-slow {
+  animation: alte-food-float-soft 6.5s ease-in-out infinite;
+}
+
+.food-float-delay {
+  animation: alte-food-float 5.5s ease-in-out 1.2s infinite;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .food-float,
+  .food-float-slow,
+  .food-float-delay {
+    animation: none;
+  }
+
+  .food-float,
+  .food-float-slow,
+  .food-float-delay,
+  .group {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@theme {
+  --color-cream: #f8f2e5;
+  --color-green: #245c3a;
+  --color-yellow: #e6b84a;
+  --color-fresh-green: #4f7d50;
+  --color-charcoal: #20251f;
+  --color-soft-white: #fffdf8;
+
+  --font-display: "Playfair Display", serif;
+  --font-sans: "DM Sans", sans-serif;
+}
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #20251f;
+  background: #f8f2e5;
+  
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-width: 320px;
+}
+
