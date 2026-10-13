@@ -42,7 +42,13 @@ def login_customer(request:Request, customer_data: CustomerLogin, response: Resp
     token = service.login_customer( email=customer_data.email, password=customer_data.password,)
 
     response.set_cookie(
-        key="access_token",value=token,httponly=True,secure=False,  samesite ="lax", max_age = settings.ACCESS_TOKEN_EXPIRE_MINUTES * 60, path="/"
+        key="access_token",
+        value=token,
+        httponly=True,
+        secure=True,
+        samesite="none",
+        max_age=settings.ACCESS_TOKEN_EXPIRE_MINUTES * 60,
+        path="/",
     )
 
     return {"message": "Login successful"}
@@ -66,8 +72,8 @@ def logout_customer(request:Request,response: Response):
         key="access_token",
         path="/",
         httponly=True,
-        # secure=False,
-        # samesite="lax",
+        secure=True,
+        samesite="none",
     )
 
     return {"message": "Logout successful"}
